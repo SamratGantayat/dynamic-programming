@@ -1,4 +1,4 @@
-package com.sam;
+package com.sam.dynamicprogramming;
 
 import java.util.ArrayList;
 

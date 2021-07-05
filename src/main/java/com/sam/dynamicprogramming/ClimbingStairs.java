@@ -1,4 +1,4 @@
-package com.sam;
+package com.sam.dynamicprogramming;
 
 
 /*
@@ -27,9 +27,22 @@ Hint : To reach nth step, what could have been your previous steps? (Think about
 
 public class ClimbingStairs {
     public static void main(String[] args) {
-        System.out.println(climbStairs(4));
+        System.out.println(climbStairsWithLoop(5));
     }
 
+    static int climbStairsWithLoop(int n) {
+        if (n < 2)
+            return n;
+        int[] arr = new int[n+2];
+        arr[0]=0;
+        arr[1]=1;
+        for (int i = 2; i < n+2; i++) {
+            arr[i] = arr[i-1] + arr[i-2];
+        }
+        return arr[n+1];
+    }
+
+    //Recursion
     static int climbStairs(int n) {
         return fib(n+1);
     }
